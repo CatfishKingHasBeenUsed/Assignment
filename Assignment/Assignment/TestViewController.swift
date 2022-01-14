@@ -15,6 +15,7 @@ class TestViewController: UIViewController, UITextFieldDelegate {
 
     let database = Firestore.firestore()
     var page = 0
+    var p = 0
     //@IBOutlet weak var label: UILabel!
     /*private let label: UILabel = {
         let label = UILabel()

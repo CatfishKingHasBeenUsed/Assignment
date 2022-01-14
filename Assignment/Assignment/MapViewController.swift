@@ -33,7 +33,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         annontation.subtitle = "4864531"
         map.addAnnotation(annontation)*/
         
-        let locations = [
+        let shopLocations = [
             ["title": "20s貳拾年華旗袍店", "latitude": 22.284745934051553, "longitude": 114.15351216091865],
             ["title": "蘭芳園", "latitude": 22.282737838844625, "longitude": 114.1537626402976],
             ["title": "天寶樓扎作", "latitude": 22.28626054351211, "longitude": 114.14397612899319],
@@ -46,10 +46,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             ["title": "明生鋼竹蒸籠廠", "latitude": 22.310597841696524, "longitude": 114.17001780326699]
         ]
 
-        for location in locations {
+        for shopLocation in shopLocations{
             let annotation = MKPointAnnotation()
-            annotation.title = location["title"] as? String
-            annotation.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! Double, longitude: location["longitude"] as! Double)
+            annotation.title = shopLocation["title"] as? String
+            annotation.coordinate = CLLocationCoordinate2D(latitude: shopLocation["latitude"] as! Double, longitude: shopLocation["longitude"] as! Double)
             map.addAnnotation(annotation)
         }
         
@@ -70,8 +70,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     func setupAndStartLocationManager(){
-        self.locationManager?.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-        self.locationManager?.distanceFilter = kCLLocationAccuracyBestForNavigation;
+        self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationManager?.distanceFilter = kCLLocationAccuracyBest;
         self.locationManager?.startUpdatingLocation();
         
     }

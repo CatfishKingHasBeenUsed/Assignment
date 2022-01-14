@@ -11,8 +11,9 @@ import UIKit
 import FirebaseFirestore
 import UIKit
 
-class DataViewController: UIViewController, UITextFieldDelegate {
-    	
+class DataViewController: UIViewController, UITextFieldDelegate{
+
+    
     let database = Firestore.firestore()
     var page: String = ""
     //@IBOutlet weak var label: UILabel!
@@ -417,7 +418,6 @@ class DataViewController: UIViewController, UITextFieldDelegate {
                 docRef = database.document("traditional/\(n)")
             }
         }
-        
         docRef.setData(["text": text])
         /*var ref: DocumentReference? = nil
         ref = database.collection("55595").addDocument(data: [
